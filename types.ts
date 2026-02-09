@@ -8,6 +8,7 @@ export interface Project {
   category: string;
   imageUrl: string;
   link: string;
+  demoLink?: string;
   tools: string[];
 }
 

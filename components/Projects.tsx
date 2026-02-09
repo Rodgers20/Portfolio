@@ -56,16 +56,18 @@ const Projects: React.FC = () => {
               
               <div className="flex items-center justify-between pt-6 border-t border-white/5 mt-auto">
                 <div className="flex gap-4">
-                   <a href="#" className="p-2 bg-white/5 rounded-lg hover:bg-white/10 transition-colors">
+                   <a href={project.link} target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 rounded-lg hover:bg-white/10 transition-colors">
                      <Github className="w-4 h-4 text-gray-400" />
                    </a>
-                   <a href="#" className="p-2 bg-white/5 rounded-lg hover:bg-white/10 transition-colors">
-                     <BarChart className="w-4 h-4 text-gray-400" />
-                   </a>
+                   {project.demoLink && (
+                     <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 rounded-lg hover:bg-white/10 transition-colors">
+                       <BarChart className="w-4 h-4 text-gray-400" />
+                     </a>
+                   )}
                 </div>
-                <button className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-orange-500 hover:text-white transition-colors">
+                <a href={project.demoLink || project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-orange-500 hover:text-white transition-colors">
                   Read Abstract <ArrowUpRight className="w-3 h-3" />
-                </button>
+                </a>
               </div>
             </div>
           ))}
