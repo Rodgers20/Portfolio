@@ -45,6 +45,7 @@ const Footer: React.FC = () => {
           <div className="flex gap-8">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <span className="text-xs text-gray-800">v1.1.0</span>
           </div>
         </div>
       </div>
