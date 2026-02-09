@@ -2,6 +2,7 @@
 import React from 'react';
 import { Database, BarChart3, Network } from 'lucide-react';
 import { SKILLS } from '../constants';
+import akiliImg from '../assets/images/akili.jpg';
 
 const Hero: React.FC = () => {
   return (
@@ -50,7 +51,7 @@ const Hero: React.FC = () => {
           <div className="relative border border-gray-200 rounded-2xl overflow-hidden shadow-2xl bg-white p-3">
             <div className="aspect-[4/5] rounded-xl overflow-hidden grayscale contrast-125">
                <img
-                 src="images/akili.jpg"
+                 src={akiliImg}
                  alt="Akili Bahati"
                  className="w-full h-full object-cover"
                />

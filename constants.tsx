@@ -3,12 +3,16 @@ import React from 'react';
 import { Database, BarChart3, TrendingUp } from 'lucide-react';
 import { Project, Experience, Service, EducationEntry, Certification } from './types';
 
+import nbaImg from './assets/images/nba.jpeg';
+import fraudImg from './assets/images/cc-fraud.jpeg';
+import pharmacyImg from './assets/images/pharmacy.jpeg';
+
 export const PROJECTS: Project[] = [
   {
     id: 'nba-predict',
     title: 'NBA Player Performance Predictor',
     category: 'PREDICTIVE ANALYTICS',
-    imageUrl: 'images/nba.jpeg',
+    imageUrl: nbaImg,
     link: 'https://github.com/Rodgers20/NBA_Player_Stats_Predictor',
     demoLink: 'https://nba-player-stats.onrender.com',
     tools: ['Python', 'Dash', 'Plotly', 'Pandas', 'Scikit-learn']
@@ -17,7 +21,7 @@ export const PROJECTS: Project[] = [
     id: 'fraud-shield',
     title: 'Credit Card Fraud Analytics Dashboard',
     category: 'DATA VISUALIZATION',
-    imageUrl: 'images/cc-fraud.jpeg',
+    imageUrl: fraudImg,
     link: '#',
     tools: ['React', 'D3.js', 'PostgreSQL', 'Express']
   },
@@ -25,7 +29,7 @@ export const PROJECTS: Project[] = [
     id: 'pharma-bot',
     title: 'Pharmacy NLP Conversational Agent',
     category: 'ARTIFICIAL INTELLIGENCE',
-    imageUrl: 'images/pharmacy.jpeg',
+    imageUrl: pharmacyImg,
     link: '#',
     tools: ['Python', 'Hugging Face', 'NLP', 'FastAPI']
   }
