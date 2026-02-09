@@ -50,7 +50,7 @@ const Hero: React.FC = () => {
           <div className="relative border border-gray-200 rounded-2xl overflow-hidden shadow-2xl bg-white p-3">
             <div className="aspect-[4/5] rounded-xl overflow-hidden grayscale contrast-125">
                <img
-                 src="/images/akili.jpg"
+                 src="images/akili.jpg"
                  alt="Akili Bahati"
                  className="w-full h-full object-cover"
                />

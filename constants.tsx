@@ -8,7 +8,7 @@ export const PROJECTS: Project[] = [
     id: 'nba-predict',
     title: 'NBA Player Performance Predictor',
     category: 'PREDICTIVE ANALYTICS',
-    imageUrl: '/images/nba.jpeg',
+    imageUrl: 'images/nba.jpeg',
     link: 'https://github.com/Rodgers20/NBA_Player_Stats_Predictor',
     demoLink: 'https://nba-player-stats.onrender.com',
     tools: ['Python', 'Dash', 'Plotly', 'Pandas', 'Scikit-learn']
@@ -17,7 +17,7 @@ export const PROJECTS: Project[] = [
     id: 'fraud-shield',
     title: 'Credit Card Fraud Analytics Dashboard',
     category: 'DATA VISUALIZATION',
-    imageUrl: '/images/cc-fraud.jpeg',
+    imageUrl: 'images/cc-fraud.jpeg',
     link: '#',
     tools: ['React', 'D3.js', 'PostgreSQL', 'Express']
   },
@@ -25,7 +25,7 @@ export const PROJECTS: Project[] = [
     id: 'pharma-bot',
     title: 'Pharmacy NLP Conversational Agent',
     category: 'ARTIFICIAL INTELLIGENCE',
-    imageUrl: '/images/pharmacy.jpeg',
+    imageUrl: 'images/pharmacy.jpeg',
     link: '#',
     tools: ['Python', 'Hugging Face', 'NLP', 'FastAPI']
   }
