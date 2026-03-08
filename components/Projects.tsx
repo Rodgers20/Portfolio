@@ -5,7 +5,7 @@ import { ArrowUpRight, Github, BarChart, Plus } from 'lucide-react';
 
 const Projects: React.FC = () => {
   return (
-    <section className="py-32 bg-[#1A1A1A] text-white px-6 md:px-12" id="projects">
+    <section className="py-32 bg-[#1A1A1A] dark:bg-[#0A0A0A] text-white px-6 md:px-12" id="projects">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-12">
           <div className="max-w-2xl">
@@ -48,9 +48,7 @@ const Projects: React.FC = () => {
                 </div>
                 
                 <p className="text-gray-500 text-sm font-light mb-8 leading-relaxed">
-                  {project.id === 'nba-predict' && "Predictive analysis of historical player data to forecast PTS/AST/REB stats using Linear Regression and Random Forest models."}
-                  {project.id === 'fraud-shield' && "Real-time anomaly detection with an integrated dashboard. Built with React and D3.js to visualize fraud heatmaps."}
-                  {project.id === 'pharma-bot' && "An intelligent conversational agent leveraging Natural Language Processing to assist in pharmaceutical and prescription inquiries."}
+                  {project.description}
                 </p>
               </div>
               

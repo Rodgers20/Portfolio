@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
         
         <div className="border-t border-gray-800 pt-12 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-500">
           <div className="text-xl font-bold text-white uppercase tracking-tighter">Akili Bahati.</div>
-          <p>© 2024 Akili Bahati. All rights reserved.</p>
+          <p>© 2026 Akili Bahati. All rights reserved.</p>
           <div className="flex gap-8">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>

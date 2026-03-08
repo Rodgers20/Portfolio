@@ -1,20 +1,67 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Akili Bahati — Portfolio
 
-# Run and deploy your AI Studio app
+Personal portfolio website for Akili Bahati, a final-year Informatics student at the University at Albany concentrating in Data Visualization & Predictive Modeling.
 
-This contains everything you need to run your app locally.
+**Live site:** [akilibahati.dev](https://akilibahati.dev) *(replace with actual URL)*
 
-View your app in AI Studio: https://ai.studio/apps/drive/1OpOIa_q38sAToRKS2A0YoSuFAqUBYCO-
+---
 
-## Run Locally
+## Tech Stack
 
-**Prerequisites:**  Node.js
+- **React 19** + **TypeScript**
+- **Vite 6** (build tool)
+- **Tailwind CSS** (via CDN)
+- **lucide-react** (icons)
+- **formsubmit.co** (contact form)
 
+## Project Structure
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```
+├── App.tsx              # Root layout, dark mode state
+├── index.tsx            # ReactDOM entrypoint
+├── constants.tsx        # All site data (projects, experience, etc.)
+├── types.ts             # TypeScript interfaces
+├── components/
+│   ├── Header.tsx       # Nav + dark mode toggle
+│   ├── Hero.tsx         # Landing + skills ticker
+│   ├── About.tsx        # Biography
+│   ├── Experience.tsx   # Work history
+│   ├── Projects.tsx     # Project showcase
+│   ├── Education.tsx    # Academic background
+│   ├── Certifications.tsx
+│   ├── Services.tsx     # Technical concentration
+│   ├── Contact.tsx      # Contact form
+│   └── Footer.tsx
+├── assets/images/       # Project & profile images (Vite-imported)
+└── public/              # Static files (PDF resume)
+```
+
+## Getting Started
+
+**Prerequisites:** Node.js 18+
+
+```bash
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+
+# Production build
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## Updating Content
+
+All site content lives in `constants.tsx`. To update projects, experience, certifications, or skills — only edit that file. Components pull data from it automatically.
+
+To add a new project image, place it in `assets/images/` and import it at the top of `constants.tsx`.
+
+## Contact
+
+**Email:** abahati@albany.edu
+**LinkedIn:** [linkedin.com/in/akili-bahati](https://linkedin.com/in/akili-bahati)
+**GitHub:** [github.com/Rodgers20](https://github.com/Rodgers20)

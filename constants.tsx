@@ -11,6 +11,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'nba-predict',
     title: 'NBA Player Performance Predictor',
+    description: 'Predictive analysis of historical player data to forecast PTS/AST/REB stats using Linear Regression and Random Forest models.',
     category: 'PREDICTIVE ANALYTICS',
     imageUrl: nbaImg,
     link: 'https://github.com/Rodgers20/NBA_Player_Stats_Predictor',
@@ -20,6 +21,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'fraud-shield',
     title: 'Credit Card Fraud Analytics Dashboard',
+    description: 'Real-time anomaly detection with an integrated dashboard. Built with React and D3.js to visualize fraud heatmaps and transaction patterns.',
     category: 'DATA VISUALIZATION',
     imageUrl: fraudImg,
     link: '#',
@@ -28,6 +30,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'pharma-bot',
     title: 'Pharmacy NLP Conversational Agent',
+    description: 'An intelligent conversational agent leveraging Natural Language Processing to assist in pharmaceutical and prescription inquiries.',
     category: 'ARTIFICIAL INTELLIGENCE',
     imageUrl: pharmacyImg,
     link: '#',
@@ -88,7 +91,7 @@ export const EDUCATION_DATA: EducationEntry[] = [
   {
     year: '2020 - 2022',
     title: 'Information Science',
-    institution: 'HUdson Valley Community College',
+    institution: 'Hudson Valley Community College',
     description: 'Associate Degree in Information Technology – Hudson Valley Community College Coursework focused on computer systems, networking fundamentals, cybersecurity principles, programming basics, database concepts, and technical support, with an emphasis on hands-on learning and practical problem-solving skills.'
   }
 ];
