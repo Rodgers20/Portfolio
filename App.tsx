@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Work from './components/Work';
+import GridironCaseStudy from './components/GridironCaseStudy';
 import Background from './components/Background';
 import Contact from './components/Contact';
 
@@ -39,6 +40,7 @@ const App: React.FC = () => {
       <main>
         <Hero />
         <Work />
+        <GridironCaseStudy />
         <Background />
       </main>
       <Contact />

@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { FEATURED, MORE_PROJECTS } from '../constants';
 import { Project } from '../types';
+import LivePreview from './LivePreview';
 
 const Reveal: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className = '' }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -52,20 +53,9 @@ const Stack: React.FC<{ items: string[] }> = ({ items }) => (
 const Featured: React.FC<{ p: Project; flip: boolean }> = ({ p, flip }) => (
   <Reveal>
   <article className="grid items-center gap-8 md:grid-cols-12 md:gap-14">
-    <a
-      href={p.liveUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={`Open ${p.title}`}
-      className={`zoom block overflow-hidden rounded-sm border border-line bg-raised md:col-span-7 ${flip ? 'md:order-2' : ''}`}
-    >
-      <img
-        src={p.image}
-        alt={p.imageAlt}
-        loading="lazy"
-        className="aspect-[16/10] w-full object-cover object-top"
-      />
-    </a>
+    <div className={`md:col-span-7 ${flip ? 'md:order-2' : ''}`}>
+      <LivePreview title={p.title} url={p.liveUrl!} image={p.image} imageAlt={p.imageAlt} />
+    </div>
     <div className="md:col-span-5">
       <p className="mb-3 font-mono text-xs text-muted">{p.year}</p>
       <h3 className="font-display text-4xl leading-none md:text-5xl">{p.title}</h3>
@@ -73,8 +63,13 @@ const Featured: React.FC<{ p: Project; flip: boolean }> = ({ p, flip }) => (
       <div className="mt-5">
         <Stack items={p.stack} />
       </div>
-      <div className="mt-6">
+      <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
         <ProjectLinks p={p} />
+        {p.detailHref && (
+          <a href={p.detailHref} className="press text-sm underline decoration-line underline-offset-[6px] hover:decoration-accent">
+            How it works
+          </a>
+        )}
       </div>
     </div>
   </article>

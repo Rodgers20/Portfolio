@@ -6,7 +6,7 @@ import courtVisionImg from './assets/images/court-vision.png';
 export const EMAIL = 'Akilirbahati@gmail.com';
 export const LINKEDIN = 'https://www.linkedin.com/in/akili-bahati';
 export const GITHUB = 'https://github.com/Rodgers20';
-export const RESUME_URL = '/Akili_B-CV.docx.pdf';
+export const RESUME_URL = '/Akili_Bahati_Resume.pdf';
 
 export const FEATURED: Project[] = [
   {
@@ -19,6 +19,7 @@ export const FEATURED: Project[] = [
     image: gridironImg,
     imageAlt: 'Gridiron week view showing a projected score and win-probability bar for Patriots at Bears',
     liveUrl: 'https://gridiron-nfl.vercel.app',
+    detailHref: '#gridiron-case-study',
   },
   {
     id: 'court-vision',

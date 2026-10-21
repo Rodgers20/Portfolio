@@ -7,6 +7,8 @@ export interface Project {
   image?: string;
   imageAlt?: string;
   liveUrl?: string;
+  /** In-page anchor to a longer write-up. */
+  detailHref?: string;
   /** Shown in place of links when there is nothing public to point at. */
   note?: string;
 }
