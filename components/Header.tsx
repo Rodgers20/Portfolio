@@ -14,7 +14,7 @@ const LINKS = [
 ];
 
 const Header: React.FC<HeaderProps> = ({ isDark, onToggleDark }) => (
-  <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-paper/90 backdrop-blur">
+  <header className="fixed inset-x-0 top-0 z-50 chrome border-b border-line">
     <nav aria-label="Primary" className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-10">
       <a href="#top" className="font-display text-2xl italic leading-none">
         Akili Bahati
@@ -37,7 +37,7 @@ const Header: React.FC<HeaderProps> = ({ isDark, onToggleDark }) => (
         <button
           onClick={onToggleDark}
           aria-label={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
-          className="flex h-8 w-8 items-center justify-center rounded-full text-muted transition-colors hover:text-ink active:scale-95"
+          className="flex h-8 w-8 items-center justify-center rounded-full text-muted press hover:text-ink"
         >
           {isDark ? <Sun className="h-4 w-4" strokeWidth={1.5} /> : <Moon className="h-4 w-4" strokeWidth={1.5} />}
         </button>

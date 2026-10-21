@@ -7,7 +7,6 @@ export interface Project {
   image?: string;
   imageAlt?: string;
   liveUrl?: string;
-  repoUrl?: string;
   /** Shown in place of links when there is nothing public to point at. */
   note?: string;
 }

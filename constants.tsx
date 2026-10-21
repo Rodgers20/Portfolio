@@ -19,7 +19,6 @@ export const FEATURED: Project[] = [
     image: gridironImg,
     imageAlt: 'Gridiron week view showing a projected score and win-probability bar for Patriots at Bears',
     liveUrl: 'https://gridiron-nfl.vercel.app',
-    note: 'Source is private',
   },
   {
     id: 'court-vision',
@@ -31,7 +30,6 @@ export const FEATURED: Project[] = [
     image: courtVisionImg,
     imageAlt: 'Court Vision tonight’s plays list ranked by edge',
     liveUrl: 'https://court-vision-basketball.vercel.app',
-    repoUrl: 'https://github.com/Rodgers20/NBA_Player_Stats_Predictor',
   },
 ];
 
@@ -43,7 +41,7 @@ export const MORE_PROJECTS: Project[] = [
     summary:
       'Football analytics dashboard for the Premier League, La Liga and Champions League. Club and player pages, 3D StatsBomb pitch scenes, and forecasts for result, goals, corners and shots on target.',
     stack: ['Next.js', 'React Three Fiber', 'FastAPI', 'Python'],
-    note: 'Runs locally, source is private',
+    note: 'Live demo on request',
   },
   {
     id: 'mlb',
@@ -52,7 +50,7 @@ export const MORE_PROJECTS: Project[] = [
     summary:
       'Daily home-run probabilities and starting-pitcher strikeout projections from an XGBoost model trained on Statcast plate appearances, with calibration and chronological validation.',
     stack: ['XGBoost', 'Statcast', 'FastAPI', 'Next.js'],
-    note: 'Runs locally, source is private',
+    note: 'Live demo on request',
   },
   {
     id: 'gymforge',
@@ -61,7 +59,7 @@ export const MORE_PROJECTS: Project[] = [
     summary:
       'Workout tracker with muscle-recovery tracking, exercise history and personal records. Built first in Expo, then rewritten natively in SwiftUI.',
     stack: ['SwiftUI', 'Expo', 'Supabase'],
-    note: 'iOS app, source is private',
+    note: 'Live demo on request',
   },
   {
     id: 'biotech',
@@ -70,7 +68,7 @@ export const MORE_PROJECTS: Project[] = [
     summary:
       'Cleaned a 10,000+ record biotech funding dataset and built a Tableau dashboard of maps, treemaps and trend charts. Found the 2019 inflection point and the $70B peak in 2021, with R² of 0.92 between company capital and deal size.',
     stack: ['pandas', 'Tableau', 'Statistics'],
-    note: 'Dashboard available on request',
+    note: 'Walkthrough on request',
   },
   {
     id: 'fraud',
@@ -79,7 +77,7 @@ export const MORE_PROJECTS: Project[] = [
     summary:
       'Data-processing pipeline and statistical models that flag anomalous transactions, with an interactive dashboard for reviewing flagged events.',
     stack: ['Python', 'Statistical modeling'],
-    note: 'Walkthrough available on request',
+    note: 'Walkthrough on request',
   },
   {
     id: 'job-assistant',
@@ -88,7 +86,7 @@ export const MORE_PROJECTS: Project[] = [
     summary:
       'Matches a weekly batch of job listings against a resume, then drafts a tailored resume and cover letter for each role that fits.',
     stack: ['Python'],
-    note: 'Source is private',
+    note: 'Live demo on request',
   },
 ];
 

@@ -11,32 +11,32 @@ const FACTS = [
 const Hero: React.FC = () => (
   <section id="top" className="mx-auto max-w-6xl px-6 pb-24 pt-36 md:px-10 md:pb-32 md:pt-44">
     <div className="grid items-end gap-14 md:grid-cols-12">
-      <div className="rise md:col-span-8">
-        <p className="mb-6 font-mono text-xs text-muted">Albany, NY · University at Albany ’26</p>
-        <h1 className="font-display text-[clamp(3rem,8vw,6.5rem)] leading-[0.95] tracking-tight">
+      <div className="md:col-span-8">
+        <p className="rise mb-6 font-mono text-xs text-muted" style={{ ["--i" as string]: 0 }}>Albany, NY · University at Albany ’26</p>
+        <h1 style={{ ["--i" as string]: 1 }} className="rise font-display text-[clamp(3rem,8vw,6.5rem)] leading-[0.95] tracking-tight">
           I build models that predict, and dashboards that <em className="text-accent">show their work.</em>
         </h1>
-        <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted">
+        <p style={{ ["--i" as string]: 2 }} className="rise mt-8 max-w-xl text-lg leading-relaxed text-muted">
           Informatics graduate focused on data and software. Most of what I make is sports prediction: models trained on
           real data, graded in public, and shipped as sites you can open.
         </p>
-        <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+        <div style={{ ["--i" as string]: 3 }} className="rise mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
           <a
             href="#work"
-            className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-transform hover:-translate-y-0.5 active:translate-y-0"
+            className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper press lift"
           >
             See the work <ArrowDown className="h-4 w-4" strokeWidth={1.5} />
           </a>
           <a
             href={`mailto:${EMAIL}`}
-            className="text-sm underline decoration-line underline-offset-[6px] transition-colors hover:decoration-accent"
+            className="text-sm underline decoration-line underline-offset-[6px] press hover:decoration-accent"
           >
             {EMAIL}
           </a>
         </div>
       </div>
 
-      <figure className="rise md:col-span-4" style={{ animationDelay: '0.12s' }}>
+      <figure className="rise md:col-span-4" style={{ ["--i" as string]: 2 }}>
         <img
           src={akiliImg}
           alt="Portrait of Akili Bahati in a dark suit and tie"
