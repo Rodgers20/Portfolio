@@ -1,130 +1,128 @@
+import { Project, Role, Degree, SkillGroup } from './types';
 
-import React from 'react';
-import { Database, BarChart3, TrendingUp } from 'lucide-react';
-import { Project, Experience, Service, EducationEntry, Certification } from './types';
+import gridironImg from './assets/images/gridiron.png';
+import courtVisionImg from './assets/images/court-vision.png';
 
-import nbaImg from './assets/images/nba.jpeg';
-import fraudImg from './assets/images/cc-fraud.jpeg';
-import pharmacyImg from './assets/images/pharmacy.jpeg';
+export const EMAIL = 'Akilirbahati@gmail.com';
+export const LINKEDIN = 'https://www.linkedin.com/in/akili-bahati';
+export const GITHUB = 'https://github.com/Rodgers20';
+export const RESUME_URL = '/Akili_B-CV.docx.pdf';
 
-export const PROJECTS: Project[] = [
+export const FEATURED: Project[] = [
   {
-    id: 'nba-predict',
-    title: 'NBA Player Performance Predictor',
-    description: 'Predictive analysis of historical player data to forecast PTS/AST/REB stats using Linear Regression and Random Forest models.',
-    category: 'PREDICTIVE ANALYTICS',
-    imageUrl: nbaImg,
-    link: 'https://github.com/Rodgers20/NBA_Player_Stats_Predictor',
-    demoLink: 'https://nba-player-stats.onrender.com',
-    tools: ['Python', 'Dash', 'Plotly', 'Pandas', 'Scikit-learn']
+    id: 'gridiron',
+    title: 'Gridiron',
+    year: '2024 – now',
+    summary:
+      'Predicts the winner, score, spread and total of every NFL game before kickoff, then grades itself in public. Backtested on 3,017 games from 2015 to 2025, it picked 66.3% of winners against 66.1% for the sportsbook closing line. A live win-probability model follows each play, and the pipeline refreshes and redeploys the site several times on game days.',
+    stack: ['Python', 'LightGBM', 'scikit-learn', 'FastAPI', 'Next.js', 'Vercel'],
+    image: gridironImg,
+    imageAlt: 'Gridiron week view showing a projected score and win-probability bar for Patriots at Bears',
+    liveUrl: 'https://gridiron-nfl.vercel.app',
+    note: 'Source is private',
   },
   {
-    id: 'fraud-shield',
-    title: 'Credit Card Fraud Analytics Dashboard',
-    description: 'Real-time anomaly detection with an integrated dashboard. Built with React and D3.js to visualize fraud heatmaps and transaction patterns.',
-    category: 'DATA VISUALIZATION',
-    imageUrl: fraudImg,
-    link: '#',
-    tools: ['React', 'D3.js', 'PostgreSQL', 'Express']
+    id: 'court-vision',
+    title: 'Court Vision',
+    year: '2025 – now',
+    summary:
+      'NBA and WNBA game predictions and player-prop analysis. It compares each model probability with live sportsbook prices, ranks plays by edge, and keeps a graded record of every pick it has made.',
+    stack: ['Python', 'FastAPI', 'Next.js', 'TypeScript', 'D3', 'Vercel'],
+    image: courtVisionImg,
+    imageAlt: 'Court Vision tonight’s plays list ranked by edge',
+    liveUrl: 'https://court-vision-basketball.vercel.app',
+    repoUrl: 'https://github.com/Rodgers20/NBA_Player_Stats_Predictor',
   },
-  {
-    id: 'pharma-bot',
-    title: 'Pharmacy NLP Conversational Agent',
-    description: 'An intelligent conversational agent leveraging Natural Language Processing to assist in pharmaceutical and prescription inquiries.',
-    category: 'ARTIFICIAL INTELLIGENCE',
-    imageUrl: pharmacyImg,
-    link: '#',
-    tools: ['Python', 'Hugging Face', 'NLP', 'FastAPI']
-  }
 ];
 
-export const EXPERIENCES: Experience[] = [
+export const MORE_PROJECTS: Project[] = [
   {
-    id: 1,
+    id: 'futball',
+    title: 'FUTBALL',
+    year: '2026',
+    summary:
+      'Football analytics dashboard for the Premier League, La Liga and Champions League. Club and player pages, 3D StatsBomb pitch scenes, and forecasts for result, goals, corners and shots on target.',
+    stack: ['Next.js', 'React Three Fiber', 'FastAPI', 'Python'],
+    note: 'Runs locally, source is private',
+  },
+  {
+    id: 'mlb',
+    title: 'MLB home run and strikeout predictor',
+    year: '2026',
+    summary:
+      'Daily home-run probabilities and starting-pitcher strikeout projections from an XGBoost model trained on Statcast plate appearances, with calibration and chronological validation.',
+    stack: ['XGBoost', 'Statcast', 'FastAPI', 'Next.js'],
+    note: 'Runs locally, source is private',
+  },
+  {
+    id: 'gymforge',
+    title: 'GymForge',
+    year: '2025 – 2026',
+    summary:
+      'Workout tracker with muscle-recovery tracking, exercise history and personal records. Built first in Expo, then rewritten natively in SwiftUI.',
+    stack: ['SwiftUI', 'Expo', 'Supabase'],
+    note: 'iOS app, source is private',
+  },
+  {
+    id: 'biotech',
+    title: 'Biotech funding analysis',
+    year: '2026',
+    summary:
+      'Cleaned a 10,000+ record biotech funding dataset and built a Tableau dashboard of maps, treemaps and trend charts. Found the 2019 inflection point and the $70B peak in 2021, with R² of 0.92 between company capital and deal size.',
+    stack: ['pandas', 'Tableau', 'Statistics'],
+    note: 'Dashboard available on request',
+  },
+  {
+    id: 'fraud',
+    title: 'Credit card fraud detection',
+    year: '2024',
+    summary:
+      'Data-processing pipeline and statistical models that flag anomalous transactions, with an interactive dashboard for reviewing flagged events.',
+    stack: ['Python', 'Statistical modeling'],
+    note: 'Walkthrough available on request',
+  },
+  {
+    id: 'job-assistant',
+    title: 'Job application assistant',
+    year: '2025',
+    summary:
+      'Matches a weekly batch of job listings against a resume, then drafts a tailored resume and cover letter for each role that fits.',
+    stack: ['Python'],
+    note: 'Source is private',
+  },
+];
+
+export const ROLES: Role[] = [
+  {
     title: 'Experimental Learning: Data Wrangling',
-    company: 'The Global Tech',
-    duration: 'SPRING 2024',
-    isActive: true
+    org: 'Global Tech HQ',
+    place: 'New York, NY',
+    dates: 'Jan – May 2024',
+    points: [
+      'Worked with stakeholders to gather business requirements and turn them into data definitions and technical specs.',
+      'Designed and validated SQL and Python pipelines that extract, clean and standardize large datasets from multiple sources.',
+      'Documented as-is data workflows and proposed to-be improvements, with written reports for technical and non-technical readers.',
+    ],
   },
-  {
-    id: 2,
-    title: 'Software Engineering Intern',
-    company: 'FinTech Solutions',
-    duration: 'SUMMER 2024'
-  },
-  {
-    id: 3,
-    title: 'Data Analyst Co-op',
-    company: 'Insight Analytics Group',
-    duration: 'FALL 2023'
-  }
 ];
 
-export const SERVICES: Service[] = [
+export const DEGREES: Degree[] = [
   {
-    id: 's1',
-    title: 'DATA VISUALIZATION',
-    icon: <BarChart3 className="w-8 h-8" />,
-    description: 'Creating interactive D3.js and Tableau dashboards that tell a compelling story from complex raw data.'
+    title: 'B.S. Informatics',
+    school: 'University at Albany, SUNY',
+    dates: 'May 2026',
+    detail: 'Software Development concentration, Machine Learning minor. GPA 3.4.',
   },
   {
-    id: 's2',
-    title: 'PREDICTIVE MODELING',
-    icon: <TrendingUp className="w-8 h-8" />,
-    description: 'Implementing Scikit-learn and PyTorch models for classification, regression, and time-series forecasting.'
+    title: 'A.A.S. Information Technology',
+    school: 'Hudson Valley Community College',
+    dates: '2020 – 2022',
+    detail: 'Computer systems, networking, programming, databases and technical support.',
   },
-  {
-    id: 's3',
-    title: 'BIG DATA PIPELINES',
-    icon: <Database className="w-8 h-8" />,
-    description: 'Designing robust ETL processes using SQL, Spark, and Python to handle large-scale information sets.'
-  }
 ];
 
-export const EDUCATION_DATA: EducationEntry[] = [
-  { 
-    year: '2022 - 2026', 
-    title: 'Informatics', 
-    institution: 'University at Albany',
-    description: 'Focusing on the intersection of human behavior and information systems. Core coursework includes Database Systems, Human-Computer Interaction, and Advanced Data Analytics.'
-  },
-  {
-    year: '2020 - 2022',
-    title: 'Information Science',
-    institution: 'Hudson Valley Community College',
-    description: 'Associate Degree in Information Technology – Hudson Valley Community College Coursework focused on computer systems, networking fundamentals, cybersecurity principles, programming basics, database concepts, and technical support, with an emphasis on hands-on learning and practical problem-solving skills.'
-  }
+export const SKILLS: SkillGroup[] = [
+  { label: 'Languages', items: ['Python', 'SQL', 'JavaScript', 'Java', 'HTML/CSS'] },
+  { label: 'Data', items: ['pandas', 'NumPy', 'scikit-learn', 'LightGBM', 'Tableau', 'Plotly/Dash', 'Jupyter'] },
+  { label: 'Build', items: ['React', 'Node.js', 'FastAPI', 'Docker', 'Git', 'AWS', 'Vercel'] },
 ];
-
-export const CERTIFICATIONS: Certification[] = [
-  {
-    id: 'c1',
-    name: 'Google Data Analytics Professional',
-    issuer: 'Google',
-    date: 'Dec 2023',
-    url: '#'
-  },
-  {
-    id: 'c2',
-    name: 'Machine Learning Specialization',
-    issuer: 'DeepLearning.AI',
-    date: 'Aug 2023',
-    url: '#'
-  },
-  {
-    id: 'c3',
-    name: 'Tableau Desktop Specialist',
-    issuer: 'Tableau',
-    date: 'May 2023',
-    url: '#'
-  },
-  {
-    id: 'c4',
-    name: 'IBM Data Science Professional',
-    issuer: 'IBM',
-    date: 'Jan 2023',
-    url: '#'
-  }
-];
-
-export const SKILLS = ['PYTHON', 'R-LANG', 'SQL', 'TABLEAU', 'SEABORN', 'TENSORFLOW', 'SCIKIT-LEARN', 'PANDAS', 'POWERBI'];

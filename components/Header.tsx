@@ -1,66 +1,49 @@
 import React from 'react';
-import { FileDown, Terminal, Sun, Moon } from 'lucide-react';
+import { Sun, Moon } from 'lucide-react';
+import { RESUME_URL } from '../constants';
 
 interface HeaderProps {
   isDark: boolean;
   onToggleDark: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ isDark, onToggleDark }) => {
-  const handleDownloadResume = () => {
-    const link = document.createElement('a');
-    link.href = '/Akili_B-CV.docx.pdf';
-    link.download = 'Akili_Bahati_Resume.pdf';
-    document.body.appendChild(link);
-    try {
-      link.click();
-    } finally {
-      document.body.removeChild(link);
-    }
-  };
+const LINKS = [
+  { href: '#work', label: 'Work' },
+  { href: '#background', label: 'Background' },
+  { href: '#contact', label: 'Contact' },
+];
 
-  return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-[#F8F9FA]/80 dark:bg-[#111111]/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
-      <nav className="max-w-7xl mx-auto px-6 md:px-12 py-5 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="w-9 h-9 bg-black dark:bg-white rounded flex items-center justify-center">
-            <Terminal className="text-white dark:text-black w-5 h-5" />
-          </div>
-          <span className="font-mono font-bold tracking-tighter text-sm uppercase dark:text-white">
-            AKILI<span className="text-orange-600"> Bahati</span>
-          </span>
-        </div>
+const Header: React.FC<HeaderProps> = ({ isDark, onToggleDark }) => (
+  <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-paper/90 backdrop-blur">
+    <nav aria-label="Primary" className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-10">
+      <a href="#top" className="font-display text-2xl italic leading-none">
+        Akili Bahati
+      </a>
 
-        <div className="flex items-center gap-6 md:gap-8">
-          <div className="hidden lg:flex items-center gap-6">
-            <a href="#about" className="text-[10px] font-bold uppercase tracking-[0.2em] hover:text-orange-600 dark:text-gray-400 dark:hover:text-orange-500 transition-colors">About</a>
-            <a href="#projects" className="text-[10px] font-bold uppercase tracking-[0.2em] hover:text-orange-600 dark:text-gray-400 dark:hover:text-orange-500 transition-colors">Portfolio</a>
-            <a href="#experience" className="text-[10px] font-bold uppercase tracking-[0.2em] hover:text-orange-600 dark:text-gray-400 dark:hover:text-orange-500 transition-colors">Career</a>
-            <a href="#education" className="text-[10px] font-bold uppercase tracking-[0.2em] hover:text-orange-600 dark:text-gray-400 dark:hover:text-orange-500 transition-colors">Background</a>
-            <a href="#certs" className="text-[10px] font-bold uppercase tracking-[0.2em] hover:text-orange-600 dark:text-gray-400 dark:hover:text-orange-500 transition-colors">Certs</a>
-            <a href="#contact" className="text-[10px] font-bold uppercase tracking-[0.2em] hover:text-orange-600 dark:text-gray-400 dark:hover:text-orange-500 transition-colors">Contact</a>
-          </div>
-
-          <div className="h-6 w-[1px] bg-gray-200 dark:bg-gray-700 hidden md:block"></div>
-
-          <button
-            onClick={onToggleDark}
-            aria-label="Toggle dark mode"
-            className="w-9 h-9 rounded-lg flex items-center justify-center border border-gray-200 dark:border-gray-700 hover:border-orange-600 dark:hover:border-orange-500 transition-all duration-300 text-gray-600 dark:text-gray-300"
-          >
-            {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-          </button>
-
-          <button
-            onClick={handleDownloadResume}
-            className="bg-black dark:bg-white text-white dark:text-black px-6 py-2.5 rounded text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 hover:bg-orange-600 dark:hover:bg-orange-600 dark:hover:text-white transition-all duration-300"
-          >
-            Resume <FileDown className="w-3.5 h-3.5" />
-          </button>
-        </div>
-      </nav>
-    </header>
-  );
-};
+      <div className="flex items-center gap-5 md:gap-8">
+        {LINKS.map((l) => (
+          <a key={l.href} href={l.href} className="hidden text-sm text-muted transition-colors hover:text-ink sm:block">
+            {l.label}
+          </a>
+        ))}
+        <a
+          href={RESUME_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm font-medium text-accent underline decoration-accent/40 underline-offset-4 transition-colors hover:decoration-accent"
+        >
+          Résumé
+        </a>
+        <button
+          onClick={onToggleDark}
+          aria-label={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
+          className="flex h-8 w-8 items-center justify-center rounded-full text-muted transition-colors hover:text-ink active:scale-95"
+        >
+          {isDark ? <Sun className="h-4 w-4" strokeWidth={1.5} /> : <Moon className="h-4 w-4" strokeWidth={1.5} />}
+        </button>
+      </div>
+    </nav>
+  </header>
+);
 
 export default Header;

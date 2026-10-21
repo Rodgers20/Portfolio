@@ -1,85 +1,61 @@
 import React from 'react';
-import { Database, BarChart3, Network } from 'lucide-react';
-import { SKILLS } from '../constants';
+import { ArrowDown } from 'lucide-react';
+import { EMAIL } from '../constants';
 import akiliImg from '../assets/images/akili.jpg';
 
-const Hero: React.FC = () => {
-  return (
-    <section className="relative min-h-screen pt-48 pb-0 grid-bg dark:bg-[#111111]">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid lg:grid-cols-12 gap-12 items-center mb-24">
+const FACTS = [
+  { value: '66.3%', label: 'of NFL winners picked across 3,017 backtested games. The sportsbook closing line got 66.1%.' },
+  { value: '1.24M', label: 'plays processed into the pipeline behind Gridiron.' },
+];
 
-        <div className="lg:col-span-7 z-10 animate-fade">
-          <div className="font-mono text-[10px] uppercase tracking-[0.5em] text-orange-600 font-bold mb-6">
-            [ ROLE: CS_RESEARCHER_FINAL_YEAR ]
-          </div>
-
-          <h1 className="text-7xl md:text-[110px] font-serif leading-[0.9] mb-8 tracking-tighter dark:text-white">
-            Akili <span className="font-light italic text-gray-400">Bahati.</span>
-          </h1>
-
-          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-xl mb-12 font-light leading-relaxed">
-            Concentrating in <span className="text-black dark:text-white font-semibold underline decoration-orange-600/30 underline-offset-4">Data Visualization & Predictive Modeling</span>. I build systems that find the signals in the noise.
-          </p>
-
-          <div className="flex flex-wrap gap-4 mb-16">
-            <div className="glass px-6 py-4 rounded-xl flex items-center gap-4 border border-gray-100 dark:border-gray-700 shadow-sm">
-              <Database className="w-5 h-5 text-orange-600" />
-              <div>
-                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Focus</p>
-                <p className="text-sm font-bold dark:text-white">Data Science</p>
-              </div>
-            </div>
-            <div className="glass px-6 py-4 rounded-xl flex items-center gap-4 border border-gray-100 dark:border-gray-700 shadow-sm">
-              <BarChart3 className="w-5 h-5 text-orange-600" />
-              <div>
-                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Expertise</p>
-                <p className="text-sm font-bold dark:text-white">Visualization</p>
-              </div>
-            </div>
-            <div className="glass px-6 py-4 rounded-xl flex items-center gap-4 border border-gray-100 dark:border-gray-700 shadow-sm">
-              <Network className="w-5 h-5 text-orange-600" />
-              <div>
-                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Core</p>
-                <p className="text-sm font-bold dark:text-white">Machine Learning</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="lg:col-span-5 relative animate-fade" style={{ animationDelay: '0.2s' }}>
-          <div className="relative border border-gray-200 dark:border-gray-700 rounded-2xl overflow-hidden shadow-2xl bg-white dark:bg-[#1A1A1A] p-3">
-            <div className="aspect-[4/5] rounded-xl overflow-hidden grayscale contrast-125">
-              <img
-                src={akiliImg}
-                alt="Akili Bahati"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
+const Hero: React.FC = () => (
+  <section id="top" className="mx-auto max-w-6xl px-6 pb-24 pt-36 md:px-10 md:pb-32 md:pt-44">
+    <div className="grid items-end gap-14 md:grid-cols-12">
+      <div className="rise md:col-span-8">
+        <p className="mb-6 font-mono text-xs text-muted">Albany, NY · University at Albany ’26</p>
+        <h1 className="font-display text-[clamp(3rem,8vw,6.5rem)] leading-[0.95] tracking-tight">
+          I build models that predict, and dashboards that <em className="text-accent">show their work.</em>
+        </h1>
+        <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted">
+          Informatics graduate focused on data and software. Most of what I make is sports prediction: models trained on
+          real data, graded in public, and shipped as sites you can open.
+        </p>
+        <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+          <a
+            href="#work"
+            className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-transform hover:-translate-y-0.5 active:translate-y-0"
+          >
+            See the work <ArrowDown className="h-4 w-4" strokeWidth={1.5} />
+          </a>
+          <a
+            href={`mailto:${EMAIL}`}
+            className="text-sm underline decoration-line underline-offset-[6px] transition-colors hover:decoration-accent"
+          >
+            {EMAIL}
+          </a>
         </div>
       </div>
 
-      {/* Skill Ticker */}
-      <div className="relative border-y border-gray-200 dark:border-gray-800 bg-white dark:bg-[#111111]">
-        <div className="h-4 w-full dot-pattern border-b border-gray-100 dark:border-gray-800 opacity-30"></div>
+      <figure className="rise md:col-span-4" style={{ animationDelay: '0.12s' }}>
+        <img
+          src={akiliImg}
+          alt="Portrait of Akili Bahati in a dark suit and tie"
+          width={600}
+          height={800}
+          className="aspect-[4/5] w-full max-w-xs rounded-sm object-cover md:max-w-none"
+        />
+      </figure>
+    </div>
 
-        <div className="py-10 overflow-hidden">
-          <div className="flex whitespace-nowrap animate-marquee w-max">
-            {[0, 1, 2].flatMap((pass) =>
-              SKILLS.map((skill) => (
-                <div key={`${pass}-${skill}`} className="flex items-center px-12 text-sm font-mono font-bold tracking-widest text-gray-400 group cursor-default">
-                  <span className="text-orange-600 mr-2 font-black">#</span>
-                  <span className="group-hover:text-black dark:group-hover:text-white transition-colors">{skill}</span>
-                </div>
-              ))
-            )}
-          </div>
+    <dl className="mt-20 grid gap-8 border-t border-line pt-10 sm:grid-cols-2 md:mt-28">
+      {FACTS.map((f) => (
+        <div key={f.value} className="flex items-baseline gap-5">
+          <dt className="font-display text-5xl tabular-nums md:text-6xl">{f.value}</dt>
+          <dd className="max-w-xs text-sm leading-relaxed text-muted">{f.label}</dd>
         </div>
-
-        <div className="h-4 w-full dot-pattern border-t border-gray-100 dark:border-gray-800 opacity-30"></div>
-      </div>
-    </section>
-  );
-};
+      ))}
+    </dl>
+  </section>
+);
 
 export default Hero;

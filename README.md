@@ -2,7 +2,7 @@
 
 Personal portfolio website for Akili Bahati, a final-year Informatics student at the University at Albany concentrating in Data Visualization & Predictive Modeling.
 
-**Live site:** [akilibahati.dev](https://akilibahati.dev) *(replace with actual URL)*
+**Live site:** [portfolio-rho-one-89.vercel.app](https://portfolio-rho-one-89.vercel.app)
 
 ---
 
@@ -62,6 +62,6 @@ To add a new project image, place it in `assets/images/` and import it at the to
 
 ## Contact
 
-**Email:** abahati@albany.edu
+**Email:** Akilirbahati@gmail.com
 **LinkedIn:** [linkedin.com/in/akili-bahati](https://linkedin.com/in/akili-bahati)
 **GitHub:** [github.com/Rodgers20](https://github.com/Rodgers20)

@@ -1,44 +1,33 @@
-
-// Fix: Added React import to provide the React namespace for React.ReactNode type definition
-import React from 'react';
-
 export interface Project {
   id: string;
   title: string;
-  description: string;
-  category: string;
-  imageUrl: string;
-  link: string;
-  demoLink?: string;
-  tools: string[];
-}
-
-export interface Experience {
-  id: number;
-  title: string;
-  company: string;
-  duration: string;
-  isActive?: boolean;
-}
-
-export interface Service {
-  id: string;
-  title: string;
-  icon: React.ReactNode;
-  description: string;
-}
-
-export interface EducationEntry {
+  summary: string;
+  stack: string[];
   year: string;
-  title: string;
-  institution: string;
-  description?: string;
+  image?: string;
+  imageAlt?: string;
+  liveUrl?: string;
+  repoUrl?: string;
+  /** Shown in place of links when there is nothing public to point at. */
+  note?: string;
 }
 
-export interface Certification {
-  id: string;
-  name: string;
-  issuer: string;
-  date: string;
-  url: string;
+export interface Role {
+  title: string;
+  org: string;
+  place: string;
+  dates: string;
+  points: string[];
+}
+
+export interface Degree {
+  title: string;
+  school: string;
+  dates: string;
+  detail: string;
+}
+
+export interface SkillGroup {
+  label: string;
+  items: string[];
 }

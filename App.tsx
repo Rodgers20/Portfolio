@@ -1,39 +1,48 @@
-
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
-import Education from './components/Education';
-import Certifications from './components/Certifications';
+import Work from './components/Work';
+import Background from './components/Background';
 import Contact from './components/Contact';
-import Footer from './components/Footer';
+
+const prefersDark = () => {
+  try {
+    const saved = localStorage.getItem('theme');
+    if (saved) return saved === 'dark';
+  } catch {
+    // storage blocked: fall through to the system setting
+  }
+  return window.matchMedia('(prefers-color-scheme: dark)').matches;
+};
 
 const App: React.FC = () => {
-  const [isDark, setIsDark] = useState(() => localStorage.getItem('theme') === 'dark');
+  const [isDark, setIsDark] = useState(prefersDark);
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', isDark);
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    try {
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    } catch {
+      // storage blocked: theme just won't persist
+    }
   }, [isDark]);
 
   return (
-    <div className="min-h-screen selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
-      <Header isDark={isDark} onToggleDark={() => setIsDark(d => !d)} />
+    <>
+      <a
+        href="#work"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-ink focus:px-4 focus:py-2 focus:text-paper"
+      >
+        Skip to work
+      </a>
+      <Header isDark={isDark} onToggleDark={() => setIsDark((d) => !d)} />
       <main>
         <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Education />
-        <Certifications />
-        <Services />
-        <Contact />
+        <Work />
+        <Background />
       </main>
-      <Footer />
-    </div>
+      <Contact />
+    </>
   );
 };
 
