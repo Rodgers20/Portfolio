@@ -12,9 +12,11 @@ interface LivePreviewProps {
   url: string;
   image?: string;
   imageAlt?: string;
+  /** Chrome tuned for the dark feature panel. */
+  onPanel?: boolean;
 }
 
-const LivePreview: React.FC<LivePreviewProps> = ({ title, url, image, imageAlt }) => {
+const LivePreview: React.FC<LivePreviewProps> = ({ title, url, image, imageAlt, onPanel }) => {
   const stageRef = useRef<HTMLDivElement>(null);
   const timer = useRef<number | undefined>(undefined);
   const [scale, setScale] = useState(0.5);
@@ -36,7 +38,7 @@ const LivePreview: React.FC<LivePreviewProps> = ({ title, url, image, imageAlt }
 
   return (
     <div
-      className="overflow-hidden rounded-md border border-line bg-raised"
+      className={`overflow-hidden ${onPanel ? 'rounded-xl bg-[#2a2723] shadow-2xl ring-1 ring-white/10' : 'rounded-md border border-line bg-raised'}`}
       onPointerEnter={(e) => {
         // Hover-to-preview is for a mouse; touch users tap the button instead.
         if (e.pointerType !== 'mouse' || active) return;
@@ -47,13 +49,13 @@ const LivePreview: React.FC<LivePreviewProps> = ({ title, url, image, imageAlt }
         setInteractive(false);
       }}
     >
-      <div className="flex items-center justify-between gap-4 border-b border-line px-4 py-2.5">
-        <span className="truncate font-mono text-xs text-muted">{host}</span>
+      <div className={`flex items-center justify-between gap-4 border-b px-4 py-2.5 ${onPanel ? 'border-white/10' : 'border-line'}`}>
+        <span className={`truncate font-mono text-xs ${onPanel ? 'text-[#f3efe7]/55' : 'text-muted'}`}>{host}</span>
         <a
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="press inline-flex shrink-0 items-center gap-1 text-xs font-medium text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent"
+          className={`press inline-flex shrink-0 items-center gap-1 text-xs font-medium underline underline-offset-4 ${onPanel ? 'text-[#7fd1b9] decoration-[#7fd1b9]/40 hover:decoration-[#7fd1b9]' : 'text-accent decoration-accent/40 hover:decoration-accent'}`}
         >
           Open full site <ArrowUpRight className="h-3 w-3" strokeWidth={1.75} />
         </a>

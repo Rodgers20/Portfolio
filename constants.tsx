@@ -18,6 +18,7 @@ export const FEATURED: Project[] = [
     stack: ['Python', 'LightGBM', 'scikit-learn', 'FastAPI', 'Next.js', 'Vercel'],
     image: gridironImg,
     imageAlt: 'Gridiron week view showing a projected score and win-probability bar for Patriots at Bears',
+    stat: { value: '66.3%', label: 'of winners picked vs 66.1% for the sportsbook closing line' },
     liveUrl: 'https://gridiron-nfl.vercel.app',
     detailHref: '#gridiron-case-study',
   },
@@ -30,6 +31,7 @@ export const FEATURED: Project[] = [
     stack: ['Python', 'FastAPI', 'Next.js', 'TypeScript', 'D3', 'Vercel'],
     image: courtVisionImg,
     imageAlt: 'Court Vision tonight’s plays list ranked by edge',
+    stat: { value: 'Edge-ranked', label: 'every pick graded on a public record' },
     liveUrl: 'https://court-vision-basketball.vercel.app',
   },
 ];

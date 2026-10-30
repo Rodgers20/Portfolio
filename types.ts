@@ -7,6 +7,8 @@ export interface Project {
   image?: string;
   imageAlt?: string;
   liveUrl?: string;
+  /** One headline number shown on the featured card. */
+  stat?: { value: string; label: string };
   /** In-page anchor to a longer write-up. */
   detailHref?: string;
   /** Shown in place of links when there is nothing public to point at. */
