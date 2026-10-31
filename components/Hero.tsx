@@ -42,12 +42,12 @@ const Hero: React.FC = () => (
           alt="Portrait of Akili Bahati in a dark suit and tie"
           width={600}
           height={800}
-          className="aspect-[4/5] w-full max-w-xs rounded-sm object-cover md:max-w-none"
+          className="aspect-[4/5] w-full rounded-sm object-cover"
         />
       </figure>
     </div>
 
-    <dl className="mt-20 grid gap-8 border-t border-line pt-10 sm:grid-cols-2 md:mt-28">
+    <dl className="mt-14 grid gap-8 border-t border-line pt-10 sm:grid-cols-2 md:mt-28">
       {FACTS.map((f) => (
         <div key={f.value} className="flex items-baseline gap-5">
           <dt className="font-display text-5xl tabular-nums md:text-6xl">{f.value}</dt>

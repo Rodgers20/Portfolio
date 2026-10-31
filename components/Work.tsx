@@ -50,23 +50,23 @@ const Stack: React.FC<{ items: string[] }> = ({ items }) => (
   <p className="font-mono text-xs leading-relaxed text-muted">{items.join(' · ')}</p>
 );
 
-// Fixed dark panel (not theme-driven) so the screenshots always sit on a dark surface.
+// Panel colors come from the theme tokens, so the cards flip with the light/dark toggle.
 const Featured: React.FC<{ p: Project; flip: boolean }> = ({ p, flip }) => (
   <Reveal>
-    <article className="grid items-center gap-10 overflow-hidden rounded-3xl bg-[#1c1a16] p-6 text-[#f3efe7] dark:ring-1 dark:ring-white/10 sm:p-8 md:grid-cols-12 md:p-12">
-      <div className={`md:col-span-5 ${flip ? 'md:order-2' : ''}`}>
-        <p className="font-mono text-xs text-[#f3efe7]/50">{p.year}</p>
+    <article className="grid grid-cols-1 items-center gap-10 overflow-hidden rounded-3xl border border-line bg-raised p-5 sm:p-8 md:grid-cols-12 md:p-12">
+      <div className={`min-w-0 md:col-span-5 ${flip ? 'md:order-2' : ''}`}>
+        <p className="font-mono text-xs text-muted">{p.year}</p>
         <h3 className="mt-3 font-display text-5xl leading-none md:text-6xl">{p.title}</h3>
-        <p className="mt-5 leading-relaxed text-[#f3efe7]/70">{p.summary}</p>
+        <p className="mt-5 leading-relaxed text-muted">{p.summary}</p>
         {p.stat && (
           <div className="mt-7">
-            <p className="font-display text-5xl text-[#7fd1b9]">{p.stat.value}</p>
-            <p className="mt-1 text-sm text-[#f3efe7]/60">{p.stat.label}</p>
+            <p className="font-display text-5xl text-accent">{p.stat.value}</p>
+            <p className="mt-1 text-sm text-muted">{p.stat.label}</p>
           </div>
         )}
         <div className="mt-7 flex flex-wrap gap-2">
           {p.stack.map((t) => (
-            <span key={t} className="rounded-full bg-[#f3efe7]/10 px-3 py-1 font-mono text-[11px] text-[#f3efe7]/70">
+            <span key={t} className="rounded-full bg-ink/10 px-3 py-1 font-mono text-[11px] text-muted">
               {t}
             </span>
           ))}
@@ -76,19 +76,19 @@ const Featured: React.FC<{ p: Project; flip: boolean }> = ({ p, flip }) => (
             href={p.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="press lift inline-flex items-center gap-2 rounded-full bg-[#f3efe7] px-5 py-2.5 text-sm font-medium text-[#1c1a16]"
+            className="press lift inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-paper"
           >
             Try the live demo <ArrowUpRight className="h-4 w-4" strokeWidth={1.75} />
           </a>
           {p.detailHref && (
-            <a href={p.detailHref} className="press text-sm underline decoration-[#f3efe7]/30 underline-offset-[6px] hover:decoration-[#f3efe7]">
+            <a href={p.detailHref} className="press text-sm underline decoration-line underline-offset-[6px] hover:decoration-ink">
               How it works
             </a>
           )}
         </div>
       </div>
-      <div className={`md:col-span-7 ${flip ? 'md:order-1' : ''}`}>
-        <LivePreview title={p.title} url={p.liveUrl!} image={p.image} imageAlt={p.imageAlt} onPanel />
+      <div className={`min-w-0 md:col-span-7 ${flip ? 'md:order-1' : ''}`}>
+        <LivePreview title={p.title} url={p.liveUrl!} image={p.image} imageAlt={p.imageAlt} />
       </div>
     </article>
   </Reveal>
